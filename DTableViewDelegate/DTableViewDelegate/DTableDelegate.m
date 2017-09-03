@@ -22,7 +22,7 @@ _Pragma("clang diagnostic pop") \
 
 #define SepViewTag 1000
 
-static NSString *DefaultTableCell = @"UITabelViewCell";
+static NSString *DefaultTableCell = @"UITableViewCell";
 
 @interface DTableDelegate ()
 
@@ -80,7 +80,7 @@ static NSString *DefaultTableCell = @"UITabelViewCell";
     }
     
     cell.accessoryType = tableRow.showAccessory ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
-    cell.selectionStyle = tableRow.showAccessory ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleDefault;
+    cell.selectionStyle = tableRow.showSelectedStyle ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleDefault;
     
     return cell;
 }

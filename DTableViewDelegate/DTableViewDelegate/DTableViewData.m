@@ -25,7 +25,7 @@
         _footerTitle  = dic[FooterTitle];
         _headerHeight = [dic[HeaderHeight] floatValue] ? [dic[HeaderHeight] floatValue] : DefaultHeaderHeight;
         _footerHeight = [dic[FooterHeight] floatValue] ? [dic[FooterHeight] floatValue] : DefaultFooterHeight;
-        _rows         = [DTableRow rowsWithData:dic[RowHeight]];
+        _rows         = [DTableRow rowsWithData:dic[RowData]];
         
     }
     return self;
