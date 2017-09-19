@@ -12,11 +12,14 @@
 @class DTableRow;
 @protocol DTableViewCell <NSObject>
 
+//初始化方法
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 
 @optional
 
+//数据传入用这个
 - (void)refreshData:(DTableRow *)rowData tableView:(UITableView *)tableView;
+
 
 @end
 

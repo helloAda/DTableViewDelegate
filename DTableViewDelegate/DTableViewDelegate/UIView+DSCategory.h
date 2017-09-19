@@ -1,83 +1,82 @@
 //
-//  UIView+D_Frame.h
-//  DTableViewDemo
+//  UIView+DSCategory.h
+//  DSCategory
 //
-//  Created by 黄铭达 on 2017/5/18.
+//  Created by 黄铭达 on 2017/8/29.
 //  Copyright © 2017年 黄铭达. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface UIView (D_Frame)
+@interface UIView (DSCategory)
 
-/**
- * Shortcut for frame.origin.x
- *
- * Sets frame.origin.x = left
- */
-@property (nonatomic) CGFloat D_left;
+@property (nonatomic) CGFloat left;
 
 /**
  * Shortcut for frame.origin.y
  *
  * Sets frame.origin.y = top
  */
-@property (nonatomic) CGFloat D_top;
+@property (nonatomic) CGFloat top;
 
 /**
  * Shortcut for frame.origin.x + frame.size.width
  *
  * Sets frame.origin.x = right - frame.size.width
  */
-@property (nonatomic) CGFloat D_right;
+@property (nonatomic) CGFloat right;
 
 /**
  * Shortcut for frame.origin.y + frame.size.height
  *
  * Sets frame.origin.y = bottom - frame.size.height
  */
-@property (nonatomic) CGFloat D_bottom;
+@property (nonatomic) CGFloat bottom;
 
 /**
  * Shortcut for frame.size.width
  *
  * Sets frame.size.width = width
  */
-@property (nonatomic) CGFloat D_width;
+@property (nonatomic) CGFloat width;
 
 /**
  * Shortcut for frame.size.height
  *
  * Sets frame.size.height = height
  */
-@property (nonatomic) CGFloat D_height;
+@property (nonatomic) CGFloat height;
 
 /**
  * Shortcut for center.x
  *
  * Sets center.x = centerX
  */
-@property (nonatomic) CGFloat D_centerX;
+@property (nonatomic) CGFloat centerX;
 
 /**
  * Shortcut for center.y
  *
  * Sets center.y = centerY
  */
-@property (nonatomic) CGFloat D_centerY;
-
+@property (nonatomic) CGFloat centerY;
 /**
  * Shortcut for frame.origin
  */
-@property (nonatomic) CGPoint D_origin;
+@property (nonatomic) CGPoint origin;
 
 /**
  * Shortcut for frame.size
  */
-@property (nonatomic) CGSize D_size;
+@property (nonatomic) CGSize size;
 
 
-//找到自己的VC
-- (UIViewController *)D_ViewController;
+
+/**
+ find view's viewController
+
+ @return ViewController
+ */
+- (UIViewController *)ds_viewController;
 
 @end

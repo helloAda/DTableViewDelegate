@@ -57,14 +57,15 @@
     if (self) {
         _imageName         = dict[ImageName];
         _title             = dict[Title];
-        _detailTitle       = dict[DetaolTitle];
+        _detailTitle       = dict[DetailTitle];
         _cellClassName     = dict[CellClass];
         _cellActionName    = dict[CellAction];
         _rowHeight         = [dict[RowHeight] floatValue]? [dict[RowHeight] floatValue] : DefaultRowHeight;
         _sepLeftEdge       = [dict[SeparatedLeftEdge] floatValue];
-        _showAccessory     = [dict[ShowSelectedStyle] boolValue];
+        _showAccessory     = [dict[ShowAccessory] boolValue];
         _forbidSelected    = [dict[ForbidSelect] boolValue];
         _showSelectedStyle = [dict[ShowSelectedStyle] boolValue];
+        _data              = dict[Data];
     }
     return self;
 }

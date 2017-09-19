@@ -1,154 +1,119 @@
 //
-//  UIView+D_Frame.m
-//  DTableViewDemo
+//  UIView+DSCategory.m
+//  DSCategory
 //
-//  Created by 黄铭达 on 2017/5/18.
+//  Created by 黄铭达 on 2017/8/29.
 //  Copyright © 2017年 黄铭达. All rights reserved.
 //
 
-#import "UIView+D_Frame.h"
+#import "UIView+DSCategory.h"
 
-@implementation UIView (D_Frame)
-- (CGFloat)D_left {
+@implementation UIView (DSCategory)
+
+- (CGFloat)left {
     return self.frame.origin.x;
 }
 
-//
-- (void)setD_left:(CGFloat)x {
+- (void)setLeft:(CGFloat)x {
     CGRect frame = self.frame;
     frame.origin.x = x;
     self.frame = frame;
 }
 
-
-//
-- (CGFloat)D_top {
+- (CGFloat)top {
     return self.frame.origin.y;
 }
 
-
-//
-- (void)D_top:(CGFloat)y {
+- (void)setTop:(CGFloat)y {
     CGRect frame = self.frame;
     frame.origin.y = y;
     self.frame = frame;
 }
 
-
-//
-- (CGFloat)D_right {
+- (CGFloat)right {
     return self.frame.origin.x + self.frame.size.width;
 }
 
-
-//
-- (void)setD_right:(CGFloat)right {
+- (void)setRight:(CGFloat)right {
     CGRect frame = self.frame;
     frame.origin.x = right - frame.size.width;
     self.frame = frame;
 }
 
-
-//
-- (CGFloat)D_bottom {
+- (CGFloat)bottom {
     return self.frame.origin.y + self.frame.size.height;
 }
 
-
-//
-- (void)setD_bottom:(CGFloat)bottom {
+- (void)setBottom:(CGFloat)bottom {
     CGRect frame = self.frame;
     frame.origin.y = bottom - frame.size.height;
     self.frame = frame;
 }
 
-
-//
-- (CGFloat)D_centerX {
+- (CGFloat)centerX {
     return self.center.x;
 }
 
-
-//
-- (void)setD_centerX:(CGFloat)centerX {
+- (void)setCenterX:(CGFloat)centerX {
     self.center = CGPointMake(centerX, self.center.y);
 }
 
-
-//
-- (CGFloat)D_centerY {
+- (CGFloat)centerY {
     return self.center.y;
 }
 
-
-//
-- (void)setD_centerY:(CGFloat)centerY {
+- (void)setCenterY:(CGFloat)centerY {
     self.center = CGPointMake(self.center.x, centerY);
 }
 
-
-//
-- (CGFloat)D_width {
+- (CGFloat)width {
     return self.frame.size.width;
 }
 
-
-//
-- (void)setD_width:(CGFloat)width {
+- (void)setWidth:(CGFloat)width {
     CGRect frame = self.frame;
     frame.size.width = width;
     self.frame = frame;
 }
 
-
-//
-- (CGFloat)D_height {
+- (CGFloat)height {
     return self.frame.size.height;
 }
 
-
-//
-- (void)setD_height:(CGFloat)height {
+- (void)setHeight:(CGFloat)height {
     CGRect frame = self.frame;
     frame.size.height = height;
     self.frame = frame;
 }
-//
-- (CGPoint)D_origin {
+
+- (CGPoint)origin {
     return self.frame.origin;
 }
 
-
-//
-- (void)setD_origin:(CGPoint)origin {
+- (void)setOrigin:(CGPoint)origin {
     CGRect frame = self.frame;
     frame.origin = origin;
     self.frame = frame;
 }
 
-
-//
-- (CGSize)D_size {
+- (CGSize)size {
     return self.frame.size;
 }
 
-
-//
-- (void)setD_size:(CGSize)size {
+- (void)setSize:(CGSize)size {
     CGRect frame = self.frame;
     frame.size = size;
     self.frame = frame;
 }
 
 
-- (UIViewController *)D_ViewController {
-    for (UIView *next = self ; next; next = next.superview) {
+- (UIViewController *)ds_viewController{
+    for (UIView *next = self; next; next = next.superview) {
         UIResponder *nextResponder = [next nextResponder];
         if ([nextResponder isKindOfClass:[UIViewController class]]) {
-            return (UIViewController*)nextResponder;
+            return (UIViewController *)nextResponder;
         }
     }
     return nil;
 }
-
 @end

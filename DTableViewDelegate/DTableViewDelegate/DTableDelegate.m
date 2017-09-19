@@ -7,9 +7,7 @@
 //
 
 #import "DTableDelegate.h"
-#import "DTableViewData.h"
-#import "DTableViewCell.h"
-#import "UIView+D_Frame.h"
+#import "UIView+DSCategory.h"
 
 
 #define D_SuppressPerformSelectorLeakWarning(Stuff) \
@@ -20,7 +18,7 @@ Stuff; \
 _Pragma("clang diagnostic pop") \
 } while (0)
 
-#define SepViewTag 1000
+#define SepViewTag 10001
 
 static NSString *DefaultTableCell = @"UITableViewCell";
 
@@ -36,7 +34,6 @@ static NSString *DefaultTableCell = @"UITableViewCell";
     self = [super init];
     if (self) {
         _DDataReceiver = data;
-        _defaultSeparatorLeftEdge = SeparatedLineLeft;
     }
     return self;
 }
@@ -80,7 +77,7 @@ static NSString *DefaultTableCell = @"UITableViewCell";
     }
     
     cell.accessoryType = tableRow.showAccessory ? UITableViewCellAccessoryDisclosureIndicator : UITableViewCellAccessoryNone;
-    cell.selectionStyle = tableRow.showSelectedStyle ? UITableViewCellSelectionStyleNone : UITableViewCellSelectionStyleDefault;
+    cell.selectionStyle = tableRow.showSelectedStyle ? UITableViewCellSelectionStyleDefault : UITableViewCellSelectionStyleNone;
     
     return cell;
 }
@@ -97,7 +94,7 @@ static NSString *DefaultTableCell = @"UITableViewCell";
     DTableSection *tableSection = self.data[indexPath.section];
     DTableRow *tableRow = tableSection.rows[indexPath.row];
     if (!tableRow.forbidSelected) {
-        UIViewController *vc = [tableView D_ViewController];
+        UIViewController *vc = [tableView ds_viewController];
         NSString *actionName = tableRow.cellActionName;
         if (actionName.length) {
             SEL sel = NSSelectorFromString(actionName);
@@ -116,19 +113,16 @@ static NSString *DefaultTableCell = @"UITableViewCell";
     sep.backgroundColor = [UIColor colorWithRed:239 / 255.0 green:239 / 255.0 blue:239 / 255.0 alpha:1];
     CGFloat sepHeight = 0.5f;
     CGFloat sepWidth;
-    if (tableRow.sepLeftEdge) {
-        sepWidth = cell.D_width - tableRow.sepLeftEdge;
+
+    //最后一行不显示
+    if (indexPath.row == tableSection.rows.count - 1) {
+        sepWidth = 0;
     }else {
-        //最后一行不显示
-        if (indexPath.row == tableSection.rows.count - 1) {
-            sepWidth = 0;
-        }else {
-            sepWidth = cell.D_width - self.defaultSeparatorLeftEdge;
-        }
+        sepWidth = cell.width - tableRow.sepLeftEdge;
     }
     
     sepWidth = sepWidth > 0 ? sepWidth : 0;
-    sep.frame = CGRectMake(cell.D_width - sepWidth, cell.D_height - sepHeight, sepWidth, sepHeight);
+    sep.frame = CGRectMake(cell.width - sepWidth, cell.height - sepHeight, sepWidth, sepHeight);
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

@@ -10,16 +10,14 @@
 #import <UIKit/UIKit.h>
 
 
-#define  SeparatedLineLeft  15//分割线距左边的距离
-
 /**
  section key
  */
 
 #define HeaderTitle  @"headerTitle"
 #define FooterTitle  @"footerTitle"
-#define HeaderHeight @"headerHeight"
-#define FooterHeight @"footerHeight"
+#define HeaderHeight @"headerHeight"  //默认 20
+#define FooterHeight @"footerHeight"  //默认 5
 #define RowData      @"rows"
 
 
@@ -27,14 +25,15 @@
  row key
  */
 
-#define Title             @"title"
-#define DetaolTitle       @"detailTitle"
-#define ImageName         @"imageName"
+#define Title             @"title"         //
+#define DetailTitle       @"detailTitle"   // 这三个使用默认cell才有效
+#define ImageName         @"imageName"     //
+
 #define CellClass         @"cellClass"
 #define CellAction        @"cellAction"
-#define Data              @"data"
-#define RowHeight         @"rowHeight"
-#define SeparatedLeftEdge @"separatedLeftEdge"
+#define Data              @"data"          //数据用这个传
+#define RowHeight         @"rowHeight"     //默认 44
+#define SeparatedLeftEdge @"separatedLeftEdge" //分割线距左边的距离
 
 
 /**
@@ -42,7 +41,7 @@
  */
 
 #define Disable           @"disable"       //cell不可见
-#define isShowAccessory   @"accessory"     //cell显示 '>'
+#define ShowAccessory     @"accessory"     //cell显示 '>'
 #define ForbidSelect      @"forbidSelect"  //cell禁止点击
 #define ShowSelectedStyle @"selectedStyle" //选中样式
 
@@ -66,8 +65,8 @@
 
 - (instancetype)initWithDic:(NSDictionary *)dic;
 
+//初始化数据
 + (NSArray *)sectionsWithData:(NSArray *)data;
-
 
 @end
 
@@ -79,7 +78,7 @@
 //标题
 @property (nonatomic, strong) NSString *title;
 
-//详细  这三个只有在使用系统的cell下生效
+//详细  以上三个只有在使用系统的cell下生效
 @property (nonatomic, copy) NSString *detailTitle;
 
 //自定义cell名称
