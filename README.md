@@ -7,64 +7,63 @@
 
 ### 使用如下：
 ```
-NSArray *data = @[
-@{
-HeaderHeight : @(30),
-RowData : @[
-@{
-CellClass     : @"CustomCell",
-Data          : @{
-@"iamge"    : @"avatar.JPG",
-@"account"  : @"123456",
-@"location" : @"你猜",
-@"nickName" : @"minami"
-},
-RowHeight     : @(100),
-},
-],
+                  @{
+                      HeaderHeight : @(30),
+                      RowData : @[
+                              @{
+                                  CellClass     : @"CustomCell",
+                                  Data          : @{
+                                            @"iamge"    : @"avatar.JPG",
+                                            @"account"  : @"123456",
+                                            @"location" : @"你猜",
+                                            @"nickName" : @"minami"
+                                            },
+                                  RowHeight     : @(100),
+                                  },
+                              ],
 
-},
-@{
-HeaderHeight : @(30),
-RowData : @[
-@{
-Title         : @"标题",
-DetailTitle   : @"副标题",
-ImageName     : @"avatar.JPG",
-ShowAccessory : @(YES),
-RowHeight     : @(60),
-SeparatedLeftEdge : @(100),
-ForbidSelect  : @(YES),
-},
-@{
-Title         : @"标题",
-DetailTitle   : @"副标题",
-ImageName     : @"avatar.JPG",
-ShowAccessory : @(YES),
-RowHeight     : @(60),
-CellAction    : @"actionName",
-},
-],
+                       },
+                   @{
+                      HeaderHeight : @(30),
+                      RowData : @[
+                               @{
+                                  Title         : @"标题",
+                                  DetailTitle   : @"副标题",
+                                  ImageName     : @"avatar.JPG",
+                                  ShowAccessory : @(YES),
+                                  RowHeight     : @(60),
+                                  SeparatedLeftEdge : @(100),
+                                  ForbidSelect  : @(YES),
+                                  },
+                                @{
+                                  Title         : @"标题",
+                                  DetailTitle   : @"副标题",
+                                  ImageName     : @"avatar.JPG",
+                                  ShowAccessory : @(YES),
+                                  RowHeight     : @(60),
+                                  CellAction    : @"actionName",
+                                  },
+                              ],
 
-},
-@{
-HeaderHeight :@(30),
-RowData : @[
-@{
-Title         : @"标题",
-ShowAccessory : @(YES),
-RowHeight     : @(60),
-CellAction    : @"actionName",
-},
-@{
-Title         : @"标题",
-ShowAccessory : @(YES),
-CellAction    : @"actionName",
-},
-],
+                       },
+                    @{
+                        HeaderHeight :@(30),
+                        RowData : @[
+                                @{
+                                   Title         : @"标题",
+                                   ShowAccessory : @(YES),
+                                   RowHeight     : @(60),
+                                   CellAction    : @"actionName",
+                                   },
+                                @{
+                                   Title         : @"标题",
+                                   ShowAccessory : @(YES),
+                                   CellAction    : @"actionName",
+                                   },
+                               ],
 
-},
-];
+                        },
+                  ];
 ```
 
 ### 效果图
