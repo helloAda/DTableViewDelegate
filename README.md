@@ -67,4 +67,4 @@
 ```
 
 ### 效果图
-![效果图](https://github.com/helloAda/DTableViewDelegate/blob/master/DTableViewDelegate/default.gif)
+![效果图](https://github.com/helloAda/DTableViewDelegate/blob/master/DTableViewDelegate/DTableViewDelegate/default.png)
