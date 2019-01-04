@@ -1,3 +1,7 @@
+
+## 项目已经不再更新 新的替代[DSSettingDataSource](https://github.com/helloAda/DSSettingDataSource)
+
+
 # DTableViewDelegate
 
 简单的使用@{key:value}方式来构建UITableView。
